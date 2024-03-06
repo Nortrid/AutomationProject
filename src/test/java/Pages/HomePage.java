@@ -22,5 +22,6 @@ public class HomePage extends  BasePage {
         elementMethods.scrollElementByPixel(0, 450);
         elementMethods.clickElement(consentField);
         elementMethods.clickElement(formsField);
+
     }
 }
