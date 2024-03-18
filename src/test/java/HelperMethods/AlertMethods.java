@@ -17,7 +17,7 @@ public class AlertMethods {
 
     public void acceptAlert(){
         waitForAlert();
-        Alert firstAlert= webDriver.switchTo().alert();
+        Alert firstAlert = webDriver.switchTo().alert();
         firstAlert.accept();
     }
 

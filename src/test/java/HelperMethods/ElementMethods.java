@@ -26,7 +26,7 @@ public class ElementMethods {
 
     public void waitVisibleElement (WebElement element){
         WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOf(element));
+//        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void clickElement (WebElement element){

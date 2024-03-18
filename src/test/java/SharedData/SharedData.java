@@ -9,9 +9,7 @@ import java.time.Duration;
 
 //aceasta clasa are ca scop pregatirea driverului / inchiderea driverului
 public class SharedData {
-
     private WebDriver webDriver;
-
     @BeforeMethod
     public void prepareDriver () {
         webDriver = new ChromeDriver();
@@ -27,7 +25,7 @@ public class SharedData {
     @AfterMethod
 
     public void clearDriver() {
-        webDriver.quit();
+//        webDriver.quit();
     }
 
     public WebDriver getWebDriver() {
