@@ -1,5 +1,6 @@
 package Pages;
 
+import ObjectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,23 +31,23 @@ public class WebTablesPage extends BasePage{
     @FindBy(id = "delete-record-4")
     private WebElement deleteButton;
 
-    public void addNewEntry(String firstNameFieldValue, String lastNameFieldValue, String userEmailFieldValue, String ageFieldValue, String salaryFieldValue, String departmentFieldValue){
+    public void addNewEntry(WebTableObject webTableObject){
         addButton.click();
 
-        elementMethods.fillElement(firstNameField, firstNameFieldValue);
-        elementMethods.fillElement(lastNameField, lastNameFieldValue);
-        elementMethods.fillElement(emailField, userEmailFieldValue);
-        elementMethods.fillElement(ageField, ageFieldValue);
-        elementMethods.fillElement(salaryField, salaryFieldValue);
-        elementMethods.fillElement(departmentField, departmentFieldValue);
+        elementMethods.fillElement(firstNameField, webTableObject.getFirstNameFieldValue());
+        elementMethods.fillElement(lastNameField, webTableObject.getLastNameFieldValue());
+        elementMethods.fillElement(emailField, webTableObject.getUserEmailFieldValue());
+        elementMethods.fillElement(ageField, webTableObject.getAgeFieldValue());
+        elementMethods.fillElement(salaryField, webTableObject.getSalaryFieldValue());
+        elementMethods.fillElement(departmentField, webTableObject.getDepartmentFieldValue());
 
         submitButton.click();
     }
 
-    public void editEntry(String firstNameFieldValue, String ageFieldValue){
+    public void editEntry(WebTableObject webTableObject){
         elementMethods.clickElement(editButton);
-        elementMethods.refillElement(firstNameField, firstNameFieldValue);
-        elementMethods.refillElement(ageField, ageFieldValue);
+        elementMethods.refillElement(firstNameField, webTableObject.getFirstNameFieldValue());
+        elementMethods.refillElement(ageField, webTableObject.getAgeFieldValue());
         elementMethods.clickElement(submitButton);
     }
 
