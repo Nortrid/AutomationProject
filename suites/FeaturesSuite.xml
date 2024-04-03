@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Features Suite" verbose="1" >
-    <test name="Features suite" >
-        <packages>
+<suite name="Features Suite" >
+    <test name="Features Suite" >
             <classes>
-                <classes name = "tests.AlertsTest"/>
-                <classes name = "tests.FrameTest"/>
-                <classes name = "tests.PracticeFormTest"/>
-
+                <class name = "Tests.AlertsTest"/>
+                <class name = "Tests.FrameTest"/>
+                <class name = "Tests.PracticeFormTest"/>
             </classes>
-        </packages>
-
     </test>
 </suite>
