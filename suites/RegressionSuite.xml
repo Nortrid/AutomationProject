@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression Suite" verbose="1" >
+    <test name="Regression suite" >
+       <packages>
+
+       <packages name = "tests.*"/>
+
+       </packages>
+    </test>
+</suite>
