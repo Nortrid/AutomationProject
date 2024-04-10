@@ -2,9 +2,9 @@
 <suite name="Features Suite" >
     <test name="Features Suite" >
             <classes>
-                <class name = "Tests.AlertsTest"/>
-                <class name = "Tests.FrameTest"/>
-                <class name = "Tests.PracticeFormTest"/>
+                <class name = "tests.AlertsTest"/>
+                <class name = "tests.FrameTest"/>
+                <class name = "tests.PracticeFormTest"/>
             </classes>
     </test>
 </suite>
