@@ -1,5 +1,6 @@
 package pages;
 
+import loggerUtility.LoggerUtility;
 import objectData.PracticeFormObject;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -136,6 +137,7 @@ public class PracticeFormsPage extends BasePage{
     public void clickSubmit(){
 
         elementMethods.clickElemForce(submit);
+        LoggerUtility.infoTest("The user clicks on submit element");
     }
 
     public void fillEntireForm(PracticeFormObject practiceFormObject){
@@ -151,7 +153,12 @@ public class PracticeFormsPage extends BasePage{
         pickState(practiceFormObject.getStateLoc());
         pickCity(practiceFormObject.getCityLoc());
         pickGenderOption(practiceFormObject.getGenderValue());
+
+        LoggerUtility.infoTest("The user fills the Practice Form fields");
+
         clickSubmit();
+        LoggerUtility.infoTest("The user clicks on submit Practice Form");
+
     }
 
     public void validatePracticeFormTable(PracticeFormObject practiceFormObject){
@@ -189,6 +196,8 @@ public class PracticeFormsPage extends BasePage{
 
         Assert.assertEquals(labelFields.get(9).getText(), "State and City");
         Assert.assertEquals(valueFields.get(9).getText(),practiceFormObject.getStateLoc() + " " + practiceFormObject.getCityLoc());
+
+        LoggerUtility.infoTest("The user validates the fields information");
     }
 
 }

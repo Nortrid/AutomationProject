@@ -4,7 +4,7 @@
             <classes>
                 <class name = "tests.AlertsTest"/>
                 <class name = "tests.FrameTest"/>
-                <class name = "tests.PracticeFormTest"/>
+                <class name = "tests.WindowTest"/>
             </classes>
     </test>
 </suite>
