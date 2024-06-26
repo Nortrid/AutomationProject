@@ -12,8 +12,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class ElementMethods {
-    public
-    WebDriver webDriver;
+    public WebDriver webDriver;
 
     public ElementMethods(WebDriver webDriver) {
         this.webDriver = webDriver;

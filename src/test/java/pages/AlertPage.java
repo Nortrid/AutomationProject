@@ -1,14 +1,19 @@
 package pages;
 
+import dataBase.querries.AlertTable;
 import loggerUtility.LoggerUtility;
+import objectData.AlertObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AlertPage extends BasePage {
+    //definim un obiect de tipul tabelului AlertTable
+    private AlertTable alertTable;
 
     public AlertPage(WebDriver webDriver){
         super(webDriver);
+        alertTable = new AlertTable();
     }
 
     @FindBy (id = "alertButton")
@@ -44,18 +49,21 @@ public class AlertPage extends BasePage {
 
     }
 
-    public  void dealWithPromtButton (String text) {
+    public  void dealWithPromtButton (AlertObject alertObject) {
         elementMethods.clickElement(promptAlertButton);
         LoggerUtility.infoTest("The user clicks on promptAlertButton element");
 
-        alertMethods.fillAlert(text);
-        LoggerUtility.infoTest("The user fills the alert with the following text" + " " + text);
+        alertMethods.fillAlert(alertObject.getAlertValue());
+        LoggerUtility.infoTest("The user fills the alert with the following text" + " " + alertObject.getAlertValue());
 
-        elementMethods.validateElementText(promptResult, "You entered " + text);
+        elementMethods.validateElementText(promptResult, "You entered " + alertObject.getAlertValue());
         LoggerUtility.infoTest("The user validate the element text");
+
+        alertTable.insertIntoAlert(alertObject);
+        LoggerUtility.infoTest("All data inserted succesfully in the table alertTable");
     }
 
-    public void dealWithConfirmButton () {
+    public void dealWithConfirmButton (AlertObject alertObject) {
         elementMethods.clickElement(confirmButton);
         LoggerUtility.infoTest("The user clicks on confirmButton element");
 
@@ -73,6 +81,7 @@ public class AlertPage extends BasePage {
 
         elementMethods.validateElementText(confirmButtonResult,"You selected Cancel");
         LoggerUtility.infoTest("The user validates the cancel message");
+
     }
 
 }

@@ -1,5 +1,6 @@
 package pages;
 
+import dataBase.querries.PracticeFormTable;
 import loggerUtility.LoggerUtility;
 import objectData.PracticeFormObject;
 import org.openqa.selenium.Keys;
@@ -13,8 +14,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class PracticeFormsPage extends BasePage{
+    private PracticeFormTable practiceFormTable;
     public PracticeFormsPage(WebDriver webDriver) {
         super(webDriver);
+        practiceFormTable = new PracticeFormTable();
     }
 
     @FindBy(id = "firstName")
@@ -60,17 +63,24 @@ public class PracticeFormsPage extends BasePage{
 
     public void fillFirstName(String firstNameFieldValue){
         elementMethods.fillElement(firstNameField, firstNameFieldValue);
+        LoggerUtility.infoTest("The user fills First Name field");
+
         elementMethods.scrollElementByPixel(0, 450);
+        LoggerUtility.infoTest("The user scrolls");
     }
 
     public void fillLastName(String lastNameFieldValue){
         elementMethods.fillElement(lastNameField, lastNameFieldValue);
         elementMethods.scrollElementByPixel(0, 450);
+
+        LoggerUtility.infoTest("The user fills Last Name field");
     }
 
     public void fillEmailField(String emailFieldValue){
 
         elementMethods.fillElement(userEmail, emailFieldValue);
+
+        LoggerUtility.infoTest("The user fills the email field");
     }
 
     public void pickBirthDate(String monthDateOfBirthValue, String yearValue, String dayValue){
@@ -83,6 +93,8 @@ public class PracticeFormsPage extends BasePage{
                 break;
             }
         }
+
+        LoggerUtility.infoTest("The user picks the Birth Date");
     }
 
     public void pickGenderOption(String genderSelection) {
@@ -96,6 +108,8 @@ public class PracticeFormsPage extends BasePage{
         else if (Objects.equals(genderSelection, "Other")){
             elementMethods.clickElement(userGender);
         }
+
+        LoggerUtility.infoTest("The user picksthe gender");
     }
 
     public void fillMobileNoField(String mobileNoValue){
@@ -104,6 +118,8 @@ public class PracticeFormsPage extends BasePage{
 
     public void pickSubjects(String subjectFieldValue){
         elementMethods.fillPressElement(subjectsField, subjectFieldValue, Keys.ENTER);
+
+        LoggerUtility.infoTest("The user picks a subject");
     }
 
     public void pickHobbies(List<String> hobbies){
@@ -113,25 +129,35 @@ public class PracticeFormsPage extends BasePage{
                 elementMethods.clickElemForce(hobbiesList.get(index));
             }
         }
+
+        LoggerUtility.infoTest("The user picks a hobby");
     }
 
     public void uploadPicture(String filePath){
         elementMethods.fillElement(pictureField, new File(filePath).getAbsolutePath());
+
+        LoggerUtility.infoTest("The user uploads a file");
     }
 
     public void pickAddress(String addressFieldValue){
 
         elementMethods.fillElement(addressField, addressFieldValue);
+
+        LoggerUtility.infoTest("The user selects the address");
     }
 
     public void pickState(String stateLoc){
         elementMethods.clickElemForce(selectState);
         elementMethods.fillPressElement(selectState2, stateLoc, Keys.ENTER);
+
+        LoggerUtility.infoTest("The user selects the State");
     }
 
     public void pickCity(String cityLoc){
         elementMethods.clickElemForce(selectCity);
         elementMethods.fillPressElement(selectCity2, cityLoc, Keys.ENTER);
+
+        LoggerUtility.infoTest("The user selects the City");
     }
 
     public void clickSubmit(){
@@ -158,6 +184,8 @@ public class PracticeFormsPage extends BasePage{
 
         clickSubmit();
         LoggerUtility.infoTest("The user clicks on submit Practice Form");
+        practiceFormTable.insertIntoPracticeFormTable(practiceFormObject);
+        LoggerUtility.infoTest("All data inserted succesfully in the table practiceFormTable");
 
     }
 

@@ -1,13 +1,16 @@
 package pages;
 
+import dataBase.querries.WebTable;
 import objectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class WebTablesPage extends BasePage{
+    private WebTable webTable;
     public WebTablesPage(WebDriver webDriver) {
         super(webDriver);
+        webTable = new WebTable();
     }
 
     @FindBy (id = "addNewRecordButton")
@@ -40,8 +43,8 @@ public class WebTablesPage extends BasePage{
         elementMethods.fillElement(ageField, webTableObject.getAgeFieldValue());
         elementMethods.fillElement(salaryField, webTableObject.getSalaryFieldValue());
         elementMethods.fillElement(departmentField, webTableObject.getDepartmentFieldValue());
-
         submitButton.click();
+        webTable.insertIntoWebTable(webTableObject);
     }
 
     public void editEntry(WebTableObject webTableObject){
