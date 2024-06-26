@@ -1,4 +1,4 @@
-package dataBase.querries;
+package dataBase.queries;
 
 import dataBase.DataBaseConnection;
 import loggerUtility.LoggerUtility;

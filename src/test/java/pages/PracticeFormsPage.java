@@ -1,6 +1,6 @@
 package pages;
 
-import dataBase.querries.PracticeFormTable;
+import dataBase.queries.PracticeFormTable;
 import loggerUtility.LoggerUtility;
 import objectData.PracticeFormObject;
 import org.openqa.selenium.Keys;

@@ -1,6 +1,6 @@
 package pages;
 
-import dataBase.querries.AlertTable;
+import dataBase.queries.AlertTable;
 import loggerUtility.LoggerUtility;
 import objectData.AlertObject;
 import org.openqa.selenium.WebDriver;

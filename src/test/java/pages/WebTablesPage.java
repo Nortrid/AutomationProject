@@ -1,6 +1,6 @@
 package pages;
 
-import dataBase.querries.WebTable;
+import dataBase.queries.WebTable;
 import objectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

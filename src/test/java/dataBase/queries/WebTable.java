@@ -1,8 +1,7 @@
-package dataBase.querries;
+package dataBase.queries;
 
 import dataBase.DataBaseConnection;
 import loggerUtility.LoggerUtility;
-import objectData.PracticeFormObject;
 import objectData.WebTableObject;
 
 import java.sql.SQLException;
